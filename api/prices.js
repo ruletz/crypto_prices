@@ -37,31 +37,3 @@ export default async function handler(req, res) {
     res.status(500).json({ error: "Failed to fetch prices" });
   }
 }
-2. Use a Proxy Server
-If modifying the Vercel API isn't an option, you can create a simple proxy server that makes the request to https://crypto-prices-xi.vercel.app/api/prices and adds the required headers before forwarding the response to your frontend.
-
-For example, using Node.js and Express:
-
-javascript
-Copy code
-const express = require("express");
-const cors = require("cors");
-const fetch = require("node-fetch");
-
-const app = express();
-app.use(cors()); // Enable CORS for all routes
-
-app.get("/proxy/prices", async (req, res) => {
-  try {
-    const response = await fetch("https://crypto-prices-xi.vercel.app/api/prices");
-    const data = await response.json();
-    res.json(data);
-  } catch (error) {
-    res.status(500).send("Failed to fetch data");
-  }
-});
-
-app.listen(3000, () => {
-  console.log("Proxy server running on http://localhost:3000");
-});
-}

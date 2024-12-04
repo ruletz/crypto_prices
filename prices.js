@@ -4,7 +4,7 @@ export default async function handler(req, res) {
 
   try {
     // Coin codes you want to request
-    const coinList = ["BTC", "ETH", "XRP", "SOL", "BNB"];
+    const coinList = ["BTC", "ETH", "XRP", "SOL", "BNB", "USDC", "DOGE", "ADA", "TRX", "TON", "AVAX", "SHIB", "LINK", "BCH", "DOT", "NEAR", "SUI", "LTC", "UNI", "APT", "ICP", "KAS", "XMR", "RNDR", "ETC", "STX", "HBAR", "AR", "AAVE", "FIL", "OP", "FTM", "VET", "ATOM", "XTZ", "ALGO", "MATIC", "IMX", "CAKE", "PEPE", "BTT", "MKR", "THETA", "HNT", "KCS", "LDO", "WLD", "MIOTA", "ZEC", "EOS", "NEO", "LUNA", "GRT", "ZIL", "DASH", "XRD", "DOGS", "TURBO", "GOAT", "AI", "FET", "AGIX", "TCN", "SEI", "OCEAN"]​​​​​​​​​​​​​​​​,
 
     // Make the request to LiveCoinWatch
     const response = await fetch(endpoint, {
